@@ -1,13 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import ContextWrapper from "Context/ContextWrapper";
+if (process.env.NODE_ENV !== "production") {
+  require("./assets/styles/index.css");
+} else {
+  require("./assets/styles/build.css");
+}
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ContextWrapper>
+      <App />
+    </ContextWrapper>
   </React.StrictMode>
 );
 
